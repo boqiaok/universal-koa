@@ -1,0 +1,35 @@
+{
+  "presets": ["react", "env", "stage-0"],
+  "plugins": [
+    "transform-decorators-legacy",
+    ["transform-runtime", {
+      "helpers": false,
+      "polyfill": false,
+      "regenerator": true,
+      "moduleName": "babel-runtime"
+    }],
+    ["import", {
+      "libraryName": "antd",
+      "style": false
+    }]
+  ],
+  "env": {
+    "development": {
+      "plugins": ["react-hot-loader/babel", "transform-runtime"]
+    },
+    "node": {
+      "plugins": [
+        [
+          "css-modules-transform", {
+              "generateScopedName": "[name]_[local]_[hash:base64:3]",
+              "extensions": [".css", ".scss"]
+          }
+        ],
+        ["transform-assets", {
+          "extensions": ["jpg", "png", "gif", "svg", "eot", "ttf", "woff", "woff"],
+          "name": "dist/img/[hash:8].[ext]"
+        }]
+      ]
+    }
+  }
+}

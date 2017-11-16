@@ -1,0 +1,5 @@
+node_modules
+.vscode
+bin
+logs
+server/config/index.js
