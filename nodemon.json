@@ -1,0 +1,21 @@
+{
+  "ignore": [
+    ".git",
+    "node_modules/"
+  ],
+  "verbose": true,
+  "execMap": {
+    "js": "babel-node --inspect index.js"
+  },
+  "watch": [
+    "server/",
+    "client/"
+  ],
+  "env": {
+    "BABEL_ENV": "node",
+    "NODE_ENV": "development",
+    "SSR": "true"
+  },
+  "ext": "js jsx json",
+  "delay": "500"
+}

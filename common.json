@@ -1,0 +1,12 @@
+{
+  "publicPath": "/",
+  "clientPort":5000,
+  "serverPort":3002,
+  "text": {
+      "webSiteName": "SSR",
+      "indexTitle": "SSR react koa2"
+  },
+  "token": {
+      "key": "King Jim"
+  }
+}

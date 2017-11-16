@@ -1,0 +1,333 @@
+/*
+* 主要使用在全局样式表中
+*/
+
+$font-family         : "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Hiragino Kaku Gothic Pro", Meiryo, "Malgun Gothic", sans-serif;          //字体优先级  描述： 整体字体方案
+
+
+// 主体的颜色
+$primary-color                  : RGBA(26,180,149,1);                          // 主体的颜色
+$primary-hover-color            : #18a786;                                  // 主体颜色的hover色
+
+
+// Color used by default to control hover and active backgrounds and for
+// alert info backgrounds.
+$primary-1: RGBA(26,180,120,0.5);               // replace tint($primary-color, 90%)
+$primary-2: RGBA(26,180,120,0.6);               // replace tint($primary-color, 80%)
+$primary-3: RGBA(26,180,120,0.7);               // unused
+$primary-4: RGBA(26,180,120,0.8);               // unused
+$primary-5: RGBA(26,180,120,0.9);               // color used to control the text color in many active and hover states, replace tint($primary-color, 20%)
+$primary-6: $primary-color;                       // color used to control the text color of active buttons, don't use, use $primary-color
+$primary-7: RGBA(26,180,120,1);                 // replace shade($primary-color, 5%)
+
+
+
+//文字大小
+$text-Large                     : 20px;                                         //标题大小    描述： 一般用在页面中的主要标题
+$text-Small                     : 14px;                                         //小副标题    描述： 一般用在页面中的输入框或者搜索条件前面
+$text-Default                   : 12px;                                         //默认大小    描述： 页面中默认的文字大小
+//普通文本的颜色
+$white                          : #FFFFFF;                                      //白色文字    描述： 一般用在 深色的色块按钮上
+$dark                           : #333333;                                      //重色文字    描述： 一般用在弹出框的标题上 以及极个别的地方使用到
+$darkGrey                       : #434343;                                      //深灰文字    描述： 一般用于 input 或者 select 的输入值
+$grey                           : #787878;                                      //中灰文字    描述： 一般用于 栏目标题、表格标题、正文标题
+$lightGrey                      : #aeaeae;                                      //浅灰文字    描述： 一般用于 input 的默认值 还包括一些提示文字 和连接文字的禁用
+$specialText-yellow             : #f8ac59;                                      //特殊黄色    描述： 某些特殊文字、特殊标注
+$specialText-red                : #ed5664;                                      //特殊红色    描述： 某些特殊文字、特殊标注
+//连接文字颜色
+$link-default                   : #1ca1dc;                                      //蓝色文字    描述： 链接文字的默认颜色
+$link-hover                     : #337ab7;                                      //深蓝文字    描述： 链接文字的鼠标经过
+$link-selected                  : $primary-color;                                      //浅绿文字    描述： 当前选中的链接颜色
+//页面布局 背景颜色 和线条颜色
+$body-background                : #FFFFFF;                                      //主体背景    描述： 页面布局的主体背景颜色
+$component-background           : #FFFFFF;                                      //组件背景    描述： 组件布局的主体背景颜色
+$line-background                : #F3F3F3;                                      //横线背景    描述： 布局时的分割线块背景颜色
+$line-color                     : #F3F3F3;                                      //线条颜色    描述： 布局时的分割线颜色 或 边框颜色
+$block-el-background            : #f9f9f9;                                      //块状元素    描述： 小块状的背景颜色，如：步骤条背景色
+//表格相关规范
+$table-input-background         : #f9f9f9;                                      //描述： 表格中输入框默认的背景颜色
+$table-input-hover-background   : #fef4c9;                                      //描述： 表格中输入框 鼠标点击的背景颜色
+$table-input-mover-background   : #fef4c9;                                      //描述： 表格中输入框 鼠标经过的背景颜色
+$table-input-focus-color        : #1ca1dc;                                      //描述： 表格上面的input输入框获得焦点的边框颜色
+//所有按钮公共部分
+$btn-disable-border             : #eaeaea;                                      //所有按钮    描述： 禁用时边框颜色
+$btn-disable-hover-background   : #e1e1e1;                                      //所有按钮    描述： 禁用移上的背景颜色
+//按钮颜色    -    色块按钮
+$btn1-default-background        : $primary-color;                                      //色块按钮    描述： 默认背景颜色
+$btn1-hover-background          : $primary-hover-color;                                      //色块按钮    描述： 经过背景颜色
+$btn1-disable-background        : #eeeeee;                                      //色块按钮    描述： 禁用背景颜色
+$btn1-font-default-color        : $white;                                       //色块按钮    描述： 默认的文字颜色
+$btn1-font-hover-color          : $white;                                       //色块按钮    描述： 鼠标经过的文字颜色
+$btn1-font-disable-color        : $lightGrey;                                   //色块按钮    描述： 禁用状态的文字颜色
+//按钮颜色    -    线框按钮
+$btn2-default-background        : #FFFFFF;                                      //线框按钮    描述： 默认背景颜色
+$btn2-default-border-color      : #e5e5e5;                                      //线框按钮    描述： 默认的边框颜色
+$btn2-hover-background          : #f2f2f2;                                      //线框按钮    描述： 鼠标经过背景颜色
+$btn2-hover-border-color        : #d2d2d2;                                      //线框按钮    描述： 鼠标经过时边框颜色
+$btn2-disable-background        : #eeeeee;                                      //线框按钮    描述： 禁用背景颜色
+$btn2-font-default-color        : $grey;                                        //线框按钮    描述： 线框按钮的默认文字颜色
+$btn2-font-hover-color          : $darkGrey;                                    //线框按钮    描述： 线框按钮鼠标经过的文字颜色
+$btn2-font-disable-color        : $lightGrey;                                   //线框按钮    描述： 线框按钮禁用状态文字颜色
+//删除按钮    -    颜色设置
+$btn-red-color                  : #de2b2b;                                      //删除按钮    例如：删除标志
+$btn-red-mover-color            : #d21616;                                      //删除按钮    例如：删除标志的移上颜色
+//边框的弧度
+$border-radius-base             : 5px;                                          //描述： 基本 边框的弧度
+$border-radius-in               : 4px;                                          //描述： 中等 边框的弧度
+$border-radius-sm               : 3px;                                          //描述： 小的 边框的弧度
+$border-radius-no               : 0px;                                          //描述： 没有 边框的弧度
+//switch开关
+$switch-border-default-color    : #d6d6d6;                                      //描述： switch开关默认的边框颜色
+$switch-backgrount-default-color: #d6d6d6;                                      //描述： switch开关默认的背景颜色
+$switch-border-color            : $primary-color;                                      //描述： switch开关开启的边框颜色
+$switch-background-color        : $primary-color;                                      //描述： switch开关开启的背景颜色
+//提示框的色值
+$message-success-background     : #ebf8f2;                                      //描述： 成功提示的背景颜色
+$message-success-color          : #49a082;                                      //描述： 成功的文字颜色
+$message-success-icon-color     : #00a854;                                      //描述： 成功的图标颜色
+$message-success-border-color   : #cfefdf;                                      //描述： 成功提示框的边框颜色
+$message-error-background       : #fef0ef;                                      //描述： 失败提示的背景颜色
+$message-error-color            : #d0483e;                                      //描述： 失败的文字颜色
+$message-error-icon-color       : #f04134;                                      //描述： 失败提示框的图标颜色
+$message-error-border-color     : #fcdbd9;                                      //描述： 失败提示框的边框颜色
+$message-warning-background     : #fffaeb;                                      //描述： 警示提示的背景颜色
+$message-warning-color          : #eeb817;                                      //描述： 警示的文字颜色
+$message-warning-icon-color     : #ffbf00;                                      //描述： 警示提示框的图标颜色
+$message-warning-border-color   : #ffecb3;                                      //描述： 警示提示框的边框颜色
+$message-font-size              : 14px;                                         //描述： 提示框内的文字大小
+//border边框颜色
+$border-color                   : #e7e7e7;                                      //描述： 常用边框颜色 已用：内容左侧树
+$btn2-def-color                 : $primary-color;              //青色 ： 默认按钮
+$btn2-after-color               : $primary-hover-color;              //深点的青色 ： 鼠标经过时使用
+$border-focus-boxShadow         : rgba(26,179,148,0.2);
+//tabs标签
+$tabs-background-color          : #63a6d6;
+$tabs-background                : #f4f4f4;                                      //描述： 常用tab切换的整体背景颜色
+$tabs-background-ink-bar        : #ffffff;                                      //描述： 当前的tab标签的背景颜色
+$tabs-active-color              : #63a6d6;
+$btn1-def-color                 : #d4d4d4;    // 默认 按钮 颜色
+$btn1-after-color               : #d2d2d2;    //灰色 : 默认白色按钮的经过颜色   鼠标经过时使用   或者  按钮不可用时使用
+$btn1-mover-color               : #676a6c;    //特殊情况 鼠标移入时的颜色。
+//Table 相关的样式变量
+$table-background-selected      : #52a0d7;                                      //描述： 表格选中的当前背景颜色
+$table-border-color:#e9e9e9;     //浅灰色    表格的边线
+$table-thead-bg:    #f5f5f5;     //表格头部背景颜色
+$table-tr-even:     #f9f9f9;     //表格  隔行换色背景颜色
+$table-mover-bg:     #fffde2;     //表格  鼠标滑过背景颜色
+
+/*按钮的角度*/
+$border-radius:   3px;
+$border-radius-0: 0px;
+
+/*单选框 多选框 颜色*/
+$checkBox-def-color:   #aaaaab; //浅灰色单选框颜色：默认颜色
+$checkBox-after-color: #676a6c;  //深灰色：鼠标移上
+
+/*border边框颜色*/
+
+$border-LGrey-color:  #e5e5e5;  //border的边框颜色
+$border-title:        #63a6d6;  //title的边框颜色
+
+/*背景颜色*/
+$bg-color:#e9eef0; //浅灰色
+$select-color:#f5f5f5;  //当前选中的select的背景颜色
+$horzontal-bg-color:#f3f3f3;    //页面横背景颜色
+
+/*特殊线条 颜色*/
+$horzontal-lines        :#f3f3f3;   //横线条
+
+// Prefix
+$ant-prefix             : ant;
+
+// Color
+$success-color          : #87d068;
+$error-color            : #f50;
+$highlight-color        : #f50;
+$warning-color          : #fa0;
+$normal-color           : #d9d9d9;
+
+// ------ Base & Require ------
+$body-background        : #fff;
+$component-background   : #fff;
+//$font-family            : -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$code-family            : Consolas, Menlo, Courier, monospace;
+$text-color             : #666;
+$heading-color          : #404040;
+$text-color-secondary   : #999;
+$font-size-base         : 12px;
+$font-size-lg           : $font-size-base + 2px;
+$line-height-base       : 1.5;
+
+
+// ICONFONT
+$iconfont-css-prefix    : anticon;
+//$icon-url               : "https://at.alicdn.com/t/font_r5u29ls31bgldi";
+
+// LINK
+$link-color             : #108ee9;
+$link-hover-color       : tint($link-color, 20%);
+$link-active-color      : shade($link-color, 5%);
+$link-hover-decoration  : none;
+
+// Animation
+$ease-out            : cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-in             : cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-in-out         : cubic-bezier(0.645, 0.045, 0.355, 1);
+$ease-out-back       : cubic-bezier(0.12, 0.4, 0.29, 1.46);
+$ease-in-back        : cubic-bezier(0.71, -0.46, 0.88, 0.6);
+$ease-in-out-back    : cubic-bezier(0.71, -0.46, 0.29, 1.46);
+$ease-out-circ       : cubic-bezier(0.08, 0.82, 0.17, 1);
+$ease-in-circ        : cubic-bezier(0.6, 0.04, 0.98, 0.34);
+$ease-in-out-circ    : cubic-bezier(0.78, 0.14, 0.15, 0.86);
+$ease-out-quint      : cubic-bezier(0.23, 1, 0.32, 1);
+$ease-in-quint       : cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$ease-in-out-quint   : cubic-bezier(0.86, 0, 0.07, 1);
+
+// Border color
+$border-color-base      : #d9d9d9;        // base border outline a component
+$border-color-split     : #e9e9e9;        // split border inside a component
+
+// Outline
+$outline-blur-size      : 0;
+$outline-width          : 2px;
+$outline-color          : $primary-color;
+
+// Background color
+$background-color-base  : #f7f7f7;        // basic gray background
+
+// Shadow
+$shadow-color           : rgba(0, 0, 0, .2);
+$shadow-1-up            : 0 -1px 6px $shadow-color;
+$shadow-1-down          : 0 1px 6px $shadow-color;
+$shadow-1-left          : -1px 0 6px $shadow-color;
+$shadow-1-right         : 1px 0 6px $shadow-color;
+$shadow-2               : 0 2px 8px $shadow-color;
+$box-shadow-base        : $shadow-1-down;
+
+// Buttons
+$btn-font-weight        : 500;
+$btn-border-radius-base : $border-radius-base;
+$btn-border-radius-sm   : $border-radius-sm;
+
+$btn-primary-color      : #fff;
+$btn-primary-bg         : $primary-color;
+$btn-group-border       : shade($primary-color, 5%);
+
+$btn-default-color      : $text-color;
+$btn-default-bg         : $background-color-base;
+$btn-default-border     : $border-color-base;
+
+$btn-ghost-color        : $text-color;
+$btn-ghost-bg           : transparent;
+$btn-ghost-border       : $border-color-base;
+
+$btn-disable-color      : #ccc;
+$btn-disable-bg         : $background-color-base;
+$btn-disable-border     : $border-color-base;
+
+$btn-padding-base       : 4px 15px;
+$btn-font-size-lg       : $font-size-lg;
+$btn-padding-lg         : 4px 15px 5px 15px;
+$btn-padding-sm         : 1px 7px;
+
+$btn-circle-size        : 28px;
+$btn-circle-size-lg     : 32px;
+$btn-circle-size-sm     : 22px;
+
+// Media queries breakpoints
+// Extra small screen / phone
+$screen-xs              : 480px;
+$screen-xs-min          : $screen-xs;
+$screen-xs-max          : ($screen-xs-min - 1);
+
+// Small screen / tablet
+$screen-sm              : 768px;
+$screen-sm-min          : $screen-sm;
+$screen-sm-max          : ($screen-sm-min - 1);
+
+// Medium screen / desktop
+$screen-md              : 992px;
+$screen-md-min          : $screen-md;
+$screen-md-max          : ($screen-md-min - 1);
+
+// Large screen / wide desktop
+$screen-lg              : 1200px;
+$screen-lg-min          : $screen-lg;
+$screen-lg-max          : ($screen-lg-min - 1);
+
+// Layout and Grid system
+$grid-columns           : 24;
+$grid-gutter-width      : 0;
+
+// z-index list
+$zindex-affix           : 10;
+$zindex-back-top        : 10;
+$zindex-modal-mask      : 1000;
+$zindex-modal           : 1000;
+$zindex-notification    : 1010;
+$zindex-message         : 1010;
+$zindex-popover         : 1030;
+$zindex-picker          : 1050;
+$zindex-dropdown        : 1050;
+$zindex-tooltip         : 1060;
+
+// Animation
+$animation-duration-slow: .3s; // Modal
+$animation-duration-base: .2s;
+$animation-duration-fast: .1s; // Tooltip
+
+// Form
+// ---
+$label-required-color        : $highlight-color;
+$label-color                 : $text-color;
+$form-item-margin-bottom     : 24px;
+
+// Input
+// ---
+$input-height-base           : 28px;
+$input-height-lg             : 32px;
+$input-height-sm             : 22px;
+$input-padding-horizontal    : 7px;
+$input-padding-vertical-base : 4px;
+$input-padding-vertical-sm   : 1px;
+$input-padding-vertical-lg   : 6px;
+$input-placeholder-color     : #ccc;
+$input-color                 : $text-color;
+$input-border-color          : $border-color-base;
+$input-bg                    : #fff;
+$input-hover-border-color    : $primary-color;
+$input-disabled-bg           : $background-color-base;
+
+// Tooltip
+// ---
+//** Tooltip max width
+$tooltip-max-width: 250px;
+//** Tooltip text color
+$tooltip-color: #fff;
+//** Tooltip background color
+$tooltip-bg: rgba(64, 64, 64, .85);
+//** Tooltip arrow width
+$tooltip-arrow-width: 5px;
+//** Tooltip distance with trigger
+$tooltip-distance: $tooltip-arrow-width - 1 + 4;
+//** Tooltip arrow color
+$tooltip-arrow-color: $tooltip-bg;
+
+// Popover
+// ---
+//** Popover body background color
+$popover-bg: #fff;
+//** Popover maximum width
+$popover-min-width: 177px;
+//** Popover arrow width
+$popover-arrow-width: 4px;
+//** Popover arrow color
+$popover-arrow-color: $popover-bg;
+//** Popover outer arrow width
+$popover-arrow-outer-width: ($popover-arrow-width + 1);
+//** Popover outer arrow color
+$popover-arrow-outer-color: fadeout($border-color-base, 30%);
+
+// Progress
+// --
+$process-default-color: $primary-color;

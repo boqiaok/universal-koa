@@ -1,0 +1,23 @@
+@import './test.scss';
+
+.jinzhe {
+  font-size: 30px;
+  &_dym {
+    font-size: 30px;
+    color: #000;
+    &:hover {
+      color: #eee;
+      border-color: $grey;
+    }
+    & > :global(.anticon) {
+      margin-right: 6px;
+      cursor: pointer;
+      color: $lightGrey;
+      line-height: 28px;
+      transition: color .15s cubic-bezier(.645,.045,.355,1);
+      &:hover {
+          color: $btn1-hover-background;
+      }
+    }
+  }
+}
