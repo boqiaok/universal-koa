@@ -19,10 +19,6 @@ var _root = require('./views/root');
 
 var _root2 = _interopRequireDefault(_root);
 
-var _store = require('./redux/store/store');
-
-var _store2 = _interopRequireDefault(_store);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -43,12 +39,13 @@ var Isomorph = function (_Component) {
   _createClass(Isomorph, [{
     key: 'render',
     value: function render() {
-      var location = this.props.location;
-
+      var _props = this.props,
+          location = _props.location,
+          store = _props.store;
 
       return _react2.default.createElement(
         _reactRedux.Provider,
-        { store: _store2.default },
+        { store: store },
         _react2.default.createElement(
           _reactRouterDom.StaticRouter,
           { location: location, context: {} },

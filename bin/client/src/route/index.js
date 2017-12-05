@@ -27,7 +27,7 @@ var Routers = _react2.default.createElement(
     _reactRouterDom.Switch,
     null,
     _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: _home2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/test', component: _home2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/test', component: _2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { component: _2.default })
   )
 );

@@ -7,6 +7,7 @@ const precss = require('precss')
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
 const AssetsPlugin = require('assets-webpack-plugin')
 const postcsseasysprites = require('postcss-easysprites')
+const common = require('../common.json')
 
 /**
 设置默认常用路径
@@ -25,15 +26,14 @@ const config = {
   cache: true,
   devtool: 'source-map',
   entry: {
-    // index: ['react-hot-loader/patch', 'webpack-hot-middleware/client', './src/index.js']
     index: [
-      'react-hot-loader/patch', 'webpack-dev-server/client?http://0.0.0.0:5000', 'webpack/hot/only-dev-server', './client/src/index.js'
+      'babel-polyfill', 'react-hot-loader/patch', `webpack-dev-server/client?http://0.0.0.0:${common.clientPort}`, 'webpack/hot/only-dev-server', './client/src/index.js'
     ]
   },
   output: {
     path: assetsDir,
     filename: jsDir + '[name].js',
-    publicPath: 'http://localhost:5000/' //  / => 修改 http://localhost:5000/
+    publicPath: `http://localhost:${common.clientPort}/` //  / => 修改 http://localhost:5000/
   },
   module: {
     // 加载器配置
@@ -131,6 +131,11 @@ const config = {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development')
+      }
+    }),
     new HtmlWebpackPlugin({
       template: 'config/index.html',
       inject: true,

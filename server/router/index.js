@@ -2,10 +2,22 @@
 //   prefix: '/api'
 // })
 const router = require('koa-router')()
-const viewhook = require('../middle/viewhook')
+
+router.get('/', async function (ctx, next) {
+  console.log('-----------')
+  await ctx.render()
+})
 
 router.get('/test', async function (ctx, next) {
-  viewhook(ctx, next)
+  await ctx.render()
+})
+
+router.get('/404', async function (ctx, next) {
+  await ctx.render()
+})
+
+router.get('*', async function (ctx, next) {
+  await ctx.render()
 })
 
 module.exports = router

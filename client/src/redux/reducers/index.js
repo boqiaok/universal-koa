@@ -1,7 +1,5 @@
-import { combineReducers } from 'redux'
-// import counter from './counter';
+import { combineReducers } from 'redux-immutable'
 import userReducer from './user'
-// load redux-form plugin
 
 export default combineReducers({
   user: userReducer

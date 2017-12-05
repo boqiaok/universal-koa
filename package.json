@@ -8,12 +8,19 @@
     "cilent": "node ./config/devServer.js",
     "server": "nodemon",
     "build:dll": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.dll.js --progress",
-    "build:client": "webpack --config ./config/webpack.config.prod.js",
+    "build:client": "webpack --config ./config/webpack.config.prod.js --progress",
     "build:server": "cross-env BABEL_ENV=node babel -D client -d bin/client && babel -D server -d bin/server",
-    "build": "npm run build:dll && npm run build:client && npm run build:server",
-    "start": "cross-env SSR=true NODE_ENV=production node ./bin/server/",
-    "precommit": "yarn test",
-    "test": "standard client/src/*"
+    "build": "npm run clean && npm run build:dll && npm run build:client && npm run build:server",
+    "start": "cross-env NODE_ENV=production node ./bin/server/",
+    "api": "cross-env NODE_ENV=development BABEL_ENV=node babel-node index.js",
+    "prod": "cross-env NODE_ENV=production pm2 start ./bin/server/",
+    "stop": "pm2 stop all",
+    "clean": "npm run clean:client && npm run clean:server",
+    "clean:client": "rimraf ./public/*",
+    "clean:server": "rimraf ./bin",
+    "fix": "standard --fix",
+    "precommit": "lint-staged",
+    "test": "standard client/src/**/*.js server/**/*.js"
   },
   "author": "boqiao   boqiaok@gmail.com",
   "license": "ISC",
@@ -23,6 +30,7 @@
     "autoprefixer": "^7.1.6",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.2",
     "babel-loader": "^7.1.2",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-css-modules-transform": "^1.2.7",
@@ -53,6 +61,7 @@
     "koa-router": "^7.2.1",
     "koa-session": "^5.5.0",
     "koa-static": "^4.0.1",
+    "lint-staged": "^5.0.0",
     "node-sass": "^4.6.0",
     "nodemon": "^1.12.1",
     "path": "^0.12.7",
@@ -61,6 +70,7 @@
     "postcss-loader": "^2.0.8",
     "precss": "^2.0.0",
     "react-hot-loader": "^3.1.1",
+    "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
     "standard": "^10.0.3",
     "style-loader": "^0.19.0",
@@ -74,13 +84,16 @@
     "antd": "^2.13.8",
     "axios": "^0.17.0",
     "echarts": "^3.7.2",
+    "immutable": "^3.8.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
+    "redux-immutable": "^4.0.0",
     "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.0",
     "redux-thunk": "^2.2.0"
   },
   "standard": {
@@ -89,7 +102,14 @@
       "/node_modules",
       "/public/",
       "/uploads",
-      "/bin"
-    ]
+      "/bin",
+      "/config"
+    ],
+    "parser": "babel-eslint"
+  },
+  "lint-staged": {
+    "client/src/**/*.js": ["standard --fix", "git add"],
+    "server/**/*.js": ["standard --fix", "git add"],
+    "config/**/*.js": ["standard --fix", "git add"]
   }
 }

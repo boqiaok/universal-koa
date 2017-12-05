@@ -5,13 +5,13 @@ import Home from '../views/home.js'
 import Page404 from '../views/404.js'
 
 const Routers = (
-    <div>
-      <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/test' component={Home} />
-        <Route component={Page404} />
-      </Switch>
-    </div>
+  <div>
+    <Switch>
+      <Route path='/' exact component={Home} />
+      <Route path='/test' component={Page404} />
+      <Route component={Page404} />
+    </Switch>
+  </div>
 )
 
 export default Routers

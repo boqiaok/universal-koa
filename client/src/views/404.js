@@ -1,9 +1,6 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
-export default class App extends Component {
-  constructor (props) {
-    super(props)
-  }
+export default class Page404 extends Component {
   render () {
     return (
       <div>

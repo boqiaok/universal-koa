@@ -22,13 +22,18 @@ var _root2 = _interopRequireDefault(_root);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var initialState = window.__REDUX_DATA__;
+delete window.__PRELOADED_STATE__;
+
+var store = (0, _store2.default)(initialState);
+
 var renderIndex = function renderIndex(Component) {
   (0, _reactDom.render)(_react2.default.createElement(
     _reactHotLoader.AppContainer,
-    null,
+    { warnings: false },
     _react2.default.createElement(
       _reactRedux.Provider,
-      { store: _store2.default },
+      { store: store },
       _react2.default.createElement(
         _reactRouterDom.BrowserRouter,
         null,
@@ -41,7 +46,8 @@ var renderIndex = function renderIndex(Component) {
 renderIndex(_root2.default);
 
 if (module.hot) {
-  module.hot.accept(function () {
-    return renderIndex(_root2.default);
+  module.hot.accept('./views/root', function () {
+    var NextApp = require('./views/root').default;
+    renderIndex(NextApp);
   });
 }

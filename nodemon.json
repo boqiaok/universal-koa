@@ -14,7 +14,7 @@
   "env": {
     "BABEL_ENV": "node",
     "NODE_ENV": "development",
-    "SSR": "true"
+    "SSR": "SSR"
   },
   "ext": "js jsx json",
   "delay": "500"

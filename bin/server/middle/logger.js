@@ -3,7 +3,6 @@
 var log4js = require('koa-log4');
 
 var _require = require('../config'),
-    debug = _require.debug,
     config = _require.log4js;
 
 // log4js.configure(config)

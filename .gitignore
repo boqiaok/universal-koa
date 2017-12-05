@@ -1,5 +1,6 @@
 node_modules
+.DS_Store
 .vscode
 bin
 logs
-server/config/index.js
+public

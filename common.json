@@ -8,5 +8,9 @@
   },
   "token": {
       "key": "King Jim"
+  },
+  "proxy": {
+    "secure": false,
+    "/api": "http://localhost:3000"
   }
 }

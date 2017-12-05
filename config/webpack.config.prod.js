@@ -36,7 +36,7 @@ const config = {
   },
   output: {
     path: assetsDir,
-    filename: jsDir + '[name][hash:8].js',
+    filename: jsDir + '[name].[hash:8].js',
     publicPath: common.publicPath
   },
   module: {

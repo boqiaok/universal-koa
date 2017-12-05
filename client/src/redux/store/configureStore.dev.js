@@ -1,16 +1,20 @@
 import { createStore, compose } from 'redux'
+import { fromJS } from 'immutable'
 import rootReducer from '../reducers'
-import middlewares from './middlewares'
-const composeEnhancers = (!process.env.SSR && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
+import mySaga from '../saga'
+import middlewares, { sagaMiddleware } from './middlewares'
+
+const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
 
 const enhancer = composeEnhancers(middlewares)
 
-export default function configureStore (initialState) {
+export default function configureStore (initialState = {}) {
   const store = createStore(
     rootReducer,
-    initialState,
+    fromJS(initialState),
     enhancer
   )
+  sagaMiddleware.run(mySaga)
 
   if (module.hot) {
     module.hot.accept('../reducers', () => {

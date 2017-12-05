@@ -3,7 +3,6 @@
 /**
  * config
  */
-
 var path = require('path');
 
 module.exports = {
@@ -68,7 +67,7 @@ module.exports = {
   assets: {},
 
   host: 'localhost', // 社区的域名
-  port: process.env.PORT || 3002, // 程序运行的端口
+  port: process.env.PORT || require(path.join(process.cwd(), 'common.json')).serverPort, // 程序运行的端口
 
   session: {
     secret: 'bo_blog_api' // 务必修改
